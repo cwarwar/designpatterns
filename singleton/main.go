@@ -29,13 +29,14 @@ func getInstance(i int) *single {
 	return singleInstance
 }
 
-// Notice that i passed the itearation number as parameter to the function getInstance(i)
+// Notice that I passed the itearation number as parameter to the function getInstance(i)
 // It was just for sake of curiosity, by doing this we can check the number of goroutine
 // that is calling the method and realize how is the assyncronism
 func main() {
 
 	for i := 0; i < 30; i++ {
 		go getInstance(i)
+		// getInstance(i)
 	}
 
 	// Scanln is similar to Scan, but stops scanning at a newline and
